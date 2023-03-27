@@ -23,12 +23,25 @@
         </div>
       </nav>
 <h1>Add a new message</h1>
-<form method="post" action="/submit-form">
+<form method="post" action="/submit-form"  onsubmit="return validateForm()">
    Username <input type="text" name="username">
    Country <input type="text" name="country">
    Message <input type="text" name="message">
 <input type="submit" value="Submit">
 </form>
+
+<script>
+  function validateForm() {
+     var username = document.forms[0]["username"].value;
+     var country = document.forms[0]["country"].value;
+     var message = document.forms[0]["message"].value;
+  
+     if (username == "" || country == "" || message == "") {
+        alert("Please fill out all fields");
+        return false;
+     }
+  }
+  </script>
 
 </body>
 </html>
