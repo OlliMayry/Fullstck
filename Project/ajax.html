@@ -43,6 +43,11 @@ crossorigin="anonymous">
    $("#submit").click(function (event) {
 
       event.preventDefault();
+       
+        if ($("#username").val() == '' || $("#country").val() == '' || $("#message").val() == '') {
+            alert('Please fill in all fields!');
+            return;
+         }
 
       $.post("/request",
    {
